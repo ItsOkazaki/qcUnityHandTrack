@@ -24,10 +24,10 @@ const QuantumBackground = () => {
             key={i}
             className="absolute w-1 h-1 bg-purple-400/40 rounded-full animate-pulse-slow"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${5 + Math.random() * 5}s`,
+              left: `${(i * 13) % 100}%`,
+              top: `${(i * 17) % 100}%`,
+              animationDelay: `${i * 0.5}s`,
+              animationDuration: `${6 + (i % 4)}s`,
             }}
           />
         ))}

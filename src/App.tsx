@@ -5,6 +5,7 @@ import CustomCursor from './components/CustomCursor';
 import QuantumBackground from './components/QuantumBackground';
 
 function App() {
+  console.log("Quantum Code Club Hub Initialized");
   const [isGameOpen, setIsGameOpen] = useState(false);
   const gameLink = "https://chaitanya-chafale.github.io/Hand-Gesture-Gaming/build/index.html";
   const instaPersonal = "https://www.instagram.com/itsmeokazaki/?hl=en";
