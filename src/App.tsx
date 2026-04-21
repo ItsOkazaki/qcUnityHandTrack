@@ -59,7 +59,7 @@ function App() {
                   className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm mb-8"
                 >
                   <Hand className="w-4 h-4" />
-                  <span className="font-mono tracking-wider uppercase">MediaPipe AI Powered</span>
+                  <span className="font-mono tracking-wider uppercase">MediaPipe & Unity</span>
                 </motion.div>
 
                 <motion.h1 
