@@ -33,23 +33,23 @@ const QuantumBackground = () => {
         ))}
       </div>
 
-      {/* Quantum Data Streams - Reduced count and optimized */}
-      {[...Array(6)].map((_, i) => (
+      {/* Quantum Data Streams - Reduced count and optimized for zero lag */}
+      {[...Array(4)].map((_, i) => (
         <motion.div
           key={`data-${i}`}
-          initial={{ x: `${10 + (i * 15)}%`, y: '110%', opacity: 0 }}
+          initial={{ x: `${15 + (i * 20)}%`, y: '110%', opacity: 0 }}
           animate={{ 
             y: '-10%', 
-            opacity: [0, 0.3, 0],
+            opacity: [0, 0.2, 0],
           }}
           transition={{
-            duration: 12 + i * 2,
+            duration: 15 + i * 3,
             repeat: Infinity,
             ease: "linear",
-            delay: i * 1.5
+            delay: i * 2
           }}
-          style={{ willChange: 'transform, opacity' }}
-          className="absolute text-[9px] text-purple-600/50 font-mono pointer-events-none select-none"
+          style={{ willChange: 'transform' }}
+          className="absolute text-[9px] text-purple-600/30 font-mono pointer-events-none select-none"
         >
           {((i + 1) * 0xABCDEF).toString(16).toUpperCase()}
           <br />

@@ -6,8 +6,8 @@ const CustomCursor = () => {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  // Faster springs for better responsiveness
-  const springConfig = { damping: 35, stiffness: 800 };
+  // Ultra-responsive springs for elite performance
+  const springConfig = { damping: 40, stiffness: 1200 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
@@ -71,9 +71,9 @@ const CustomCursor = () => {
 };
 
 const TailSegment = ({ index, x, y }: { index: number; x: any; y: any }) => {
-  // Each segment follows the previous with snappy spring physics
-  const springX = useSpring(x, { stiffness: 1000 - index * 150, damping: 50 + index * 5 });
-  const springY = useSpring(y, { stiffness: 1000 - index * 150, damping: 50 + index * 5 });
+  // Ultra-fast tail physics
+  const springX = useSpring(x, { stiffness: 1500 - index * 200, damping: 60 + index * 10 });
+  const springY = useSpring(y, { stiffness: 1500 - index * 200, damping: 60 + index * 10 });
 
   return (
     <motion.div
