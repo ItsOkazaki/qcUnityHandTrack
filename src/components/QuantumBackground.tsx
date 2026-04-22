@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 
-const QuantumBackground = () => {
+const QuantumBackground = ({ intensity = 1, color = '#4c1d95' }: { intensity?: number; color?: string }) => {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-[#06030d]">
+    <div className="fixed inset-0 -z-10 overflow-hidden transition-colors duration-1000" style={{ opacity: intensity }}>
       {/* Static Gradient Blobs - Non-animated or slow CSS animated for performance */}
-      <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-purple-900/20 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[-20%] right-[-10%] w-[70%] h-[70%] bg-indigo-900/15 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] rounded-full blur-[100px] pointer-events-none" style={{ backgroundColor: `${color}20` }} />
+      <div className="absolute bottom-[-20%] right-[-10%] w-[70%] h-[70%] rounded-full blur-[100px] pointer-events-none" style={{ backgroundColor: `${color}15` }} />
 
       {/* Grid Effect - Use a simple div with CSS */}
       <div 
