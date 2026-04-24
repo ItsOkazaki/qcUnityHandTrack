@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Camera, CameraOff, RefreshCw, Move, X } from 'lucide-react';
 
-const SystemCheck = ({ onInit }: { onInit?: () => void }) => {
+const SystemCheck = ({ onInit, onClose }: { onInit?: () => void, onClose?: () => void }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [stream, setStream] = useState<MediaStream | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -59,7 +59,16 @@ const SystemCheck = ({ onInit }: { onInit?: () => void }) => {
               <Move className="w-4 h-4 text-purple-400" />
               <span className="text-[10px] font-mono text-white font-bold uppercase tracking-widest">System Check</span>
             </div>
-            <div className={`w-2.5 h-2.5 rounded-full ${stream ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)] animate-pulse' : 'bg-gray-600'}`} />
+            <div className="flex items-center gap-3">
+              <div className={`w-2.5 h-2.5 rounded-full ${stream ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)] animate-pulse' : 'bg-gray-600'}`} />
+              <button 
+                onClick={onClose}
+                className="p-1 hover:bg-white/10 rounded transition-colors"
+                title="Hide Mirror"
+              >
+                <X className="w-3 h-3 text-white/50 hover:text-white" />
+              </button>
+            </div>
           </div>
 
           {/* Viewport */}
